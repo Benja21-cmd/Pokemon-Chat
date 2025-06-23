@@ -44,7 +44,7 @@ const PokemonList = () => {
     fetchPokemons();
   }, []);
 
-  // Inicializa el chat con el Pokémon seleccionado
+  
   useEffect(() => {
     if (isChatOpen && selectedPokemon) {
       setChatMessages([
@@ -121,7 +121,7 @@ ${message}
 
       const content = data.candidates?.[0]?.content;
       if (content && Array.isArray(content.parts)) {
-        // Extraemos y unimos solo el texto para evitar pasar objetos a React
+        
         return content.parts.map((part) => part.text).join("");
       }
 
@@ -132,7 +132,6 @@ ${message}
     }
   };
 
-  // Maneja el like/unlike
   const toggleLike = (pokemonName) => {
     let updatedLikes;
 
@@ -146,13 +145,13 @@ ${message}
     localStorage.setItem("likedPokemons", JSON.stringify(updatedLikes));
   };
 
-  // Abrir chat y seleccionar Pokémon
+
   const handleTalkClick = (pokemon) => {
     setSelectedPokemon(pokemon);
     setIsChatOpen(true);
   };
 
-  // Enviar mensaje: agrega el mensaje de usuario y espera la respuesta IA
+  
   const sendMessage = async (message) => {
     setChatMessages((msgs) => [...msgs, { from: "user", text: message }]);
 
