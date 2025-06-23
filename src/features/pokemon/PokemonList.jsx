@@ -226,7 +226,7 @@ ${message}
                 className="talk-button"
                 onClick={() => handleTalkClick(pokemon)}
               >
-                Habla conmigo
+                Hablar con este pokemon
               </button>
             </div>
           </div>
